@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">movieBox</string>
+    <string name="watch_your_video_n_in_viirtual_reallity">watch your video\n in viirtual reallity</string>
+    <string name="waatch_videos_in_n_virtual_reality">Waatch Videos in\n Virtual Reality</string>
+    <string name="download_and_watch_offline_n_wherever_you_are">Download and watch offline\n wherever you are</string>
+    <string name="get_in">Get in</string>
+    <string name="log_in">Log in</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="forgot_your_password">Forgot Your Password</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="register_now">Register now</string>
+    <string name="what_would_you_like_to_watch">What would you like to watch?</string>
+    <string name="search_moview">Search moview</string>
+    <string name="search_movie">search_movie</string>
+    <string name="new_movie">New Movie</string>
+    <string name="btn1">btn1</string>
+    <string name="heart">heart</string>
+    <string name="basket">basket</string>
+    <string name="basket_invisible">basket invisible</string>
+    <string name="profile">profile</string>
+    <string name="upcomming_movies">Upcomming Movies</string>
+    <string name="button">button</string>
+</resources>
