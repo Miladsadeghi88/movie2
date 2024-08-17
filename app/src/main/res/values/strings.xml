@@ -22,4 +22,8 @@
     <string name="upcomming_movies">Upcomming Movies</string>
     <string name="button">button</string>
     <string name="new_movies">new_movies</string>
+    <string name="_0">0</string>
+    <string name="summary">summary</string>
+    <string name="title">title</string>
+    <string name="score">score</string>
 </resources>
