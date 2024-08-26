@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailActivity">
+    tools:context=".ui.detail.DetailActivity">
 
 
     <ScrollView
@@ -225,25 +225,8 @@
                 app:layout_constraintStart_toStartOf="@id/txt_actors"
                 app:layout_constraintTop_toBottomOf="@id/txt_actors" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/imagesRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_actorsInfo" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <ProgressBar
-        android:id="@+id/DetailLoading"
-        style="?android:attr/progressBarStyle"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/scrollView3"
-        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
