@@ -10,7 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DetailViewModel: ViewModel() {
+class DetailViewModel : ViewModel() {
     private  val _detailMovie = MutableLiveData<DetailMovieModel>()
     val detailMovie:LiveData<DetailMovieModel> get() = _detailMovie
     private val _detailSeries = MutableLiveData<DetailSeries>()
@@ -23,6 +23,7 @@ class DetailViewModel: ViewModel() {
 
 
     fun getDetailMovie(id : Int){
+
         RetrofitClient.retrofitService.detailMovie(id).enqueue(object:Callback<DetailMovieModel>{
             override fun onResponse(
                 call: Call<DetailMovieModel>,

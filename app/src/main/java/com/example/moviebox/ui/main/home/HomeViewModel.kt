@@ -1,4 +1,4 @@
-package com.example.moviebox.ui.main
+package com.example.moviebox.ui.main.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,7 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel:ViewModel() {
+class HomeViewModel:ViewModel() {
     private val _movies = MutableLiveData<PopularMoviesModel>()
     val movies: LiveData<PopularMoviesModel> get()=_movies
     private val _series = MutableLiveData<PopularSeriesModel>()

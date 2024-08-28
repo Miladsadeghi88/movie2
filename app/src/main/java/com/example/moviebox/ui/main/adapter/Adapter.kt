@@ -16,8 +16,9 @@ class Adapter(
     val movies: PopularMoviesModel? = null,
     val series: PopularSeriesModel? = null,
     val from: RecyclerViewType,
-    val onClick: (id: Int) -> Unit?,
-) : RecyclerView.Adapter<Adapter.ItemsViewHolders>() {
+    val onClick: (id: Int) -> Unit,
+
+    ) : RecyclerView.Adapter<Adapter.ItemsViewHolders>() {
 
     inner class ItemsViewHolders(items: View) : RecyclerView.ViewHolder(items) {
         val binding = ViewHolderItemFilmBinding.bind(items)
@@ -44,6 +45,7 @@ class Adapter(
     override fun onBindViewHolder(holder: ItemsViewHolders, position: Int) {
         when (from) {
             RecyclerViewType.fromMovie -> {
+
                 movies?.let {
                     val movie = it.results[position]
                     holder.binding.apply {

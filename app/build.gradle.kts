@@ -6,7 +6,7 @@ plugins {
 android {
     namespace = "com.example.moviebox"
     compileSdk = 34
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 
@@ -54,5 +54,12 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.picasso)
     implementation(libs.codegson)
+    implementation(libs.fragment)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation("com.google.android.material:material:<version>")
+
+
 
 }
