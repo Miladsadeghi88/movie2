@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/account_navigation"
+    app:startDestination="@id/introFragment">
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.example.moviebox.ui.account.intro.IntroFragment"
+        android:label="IntroFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.moviebox.ui.account.login.LoginFragment"
+        android:label="LoginFragment" />
+</navigation>

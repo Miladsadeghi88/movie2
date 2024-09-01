@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moviebox.R
 import com.example.moviebox.databinding.FragmentHomeBinding
-import com.example.moviebox.ui.LoginActivity
 import com.example.moviebox.ui.main.adapter.Adapter
 import com.example.moviebox.ui.main.adapter.RecyclerViewType
 import com.example.moviebox.utils.FROM_MOVIE
