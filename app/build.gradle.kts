@@ -57,7 +57,6 @@ dependencies {
     implementation(libs.fragment)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-    implementation(libs.imageslideshow)
     implementation(libs.material)
 
 
