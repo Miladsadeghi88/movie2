@@ -28,4 +28,19 @@
     <string name="score">score</string>
     <string name="popular_movies">Popular movies</string>
     <string name="popular_series">Popular series</string>
+    <string name="register">Register</string>
+    <string name="User_Name">User Name</string>
+    <string name="email">Email</string>
+    <string name="mobile_no">mobile No</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="submit">Submit</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="enter_your_email_mobile_no">Enter your email/mobile NO</string>
+    <string name="Submit">Submit</string>
+    <string name="next">Next</string>
+    <string name="do_you_forgot_your_password">do you forgot your password?</string>
+    <string name="change_password">Change password</string>
+    <string name="enter_the_recovery_code">Enter the recovery code</string>
+    <string name="new_password">New password</string>
+    <string name="save">Save</string>
 </resources>
