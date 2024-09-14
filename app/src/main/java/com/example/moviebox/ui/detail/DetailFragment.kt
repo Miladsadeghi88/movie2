@@ -14,7 +14,7 @@ import com.example.moviebox.utils.FROM_SERIES
 import com.squareup.picasso.Picasso
 
 
-class DetailFragment : Fragment() {
+class  DetailFragment : Fragment() {
     private val viewModel: DetailViewModel by viewModels()
     private var from = -1
     private var id = -1

@@ -1,16 +1,17 @@
 package com.example.moviebox.ui.account
 
+import android.accounts.Account
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.moviebox.databinding.ActivityMainBinding
+import com.example.moviebox.databinding.ActivityAccountBinding
 
 class AccountActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding:ActivityAccountBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
     }

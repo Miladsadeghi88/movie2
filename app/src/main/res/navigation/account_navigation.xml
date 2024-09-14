@@ -7,9 +7,40 @@
     <fragment
         android:id="@+id/introFragment"
         android:name="com.example.moviebox.ui.account.intro.IntroFragment"
-        android:label="IntroFragment" />
+        android:label="IntroFragment" >
+        <action
+            android:id="@+id/action_introFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.moviebox.ui.account.login.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPassFragment"
+            app:destination="@id/forgotPassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.moviebox.ui.account.register.RegisterFragment"
+        android:label="RegisterFragment" />
+    <fragment
+        android:id="@+id/forgotPassFragment"
+        android:name="com.example.moviebox.ui.account.forgotPass.ForgotPassFragment"
+        android:label="ForgotPassFragment" >
+        <action
+            android:id="@+id/action_forgotPassFragment_to_recoveryPassFragment"
+            app:destination="@id/recoveryPassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoveryPassFragment"
+        android:name="com.example.moviebox.ui.account.recoveryPass.RecoveryPassFragment"
+        android:label="RecoveryPassFragment" >
+        <action
+            android:id="@+id/action_recoveryPassFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

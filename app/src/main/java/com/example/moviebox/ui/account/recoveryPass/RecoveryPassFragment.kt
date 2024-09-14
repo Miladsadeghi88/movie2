@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.moviebox.R
 import com.example.moviebox.databinding.FragmentRecoveryPassBinding
 
 class RecoveryPassFragment:Fragment() {
@@ -15,6 +17,10 @@ class RecoveryPassFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding=FragmentRecoveryPassBinding.inflate(inflater,container,false)
+
+        binding.btnSave.setOnClickListener {
+            findNavController().navigate(R.id.action_recoveryPassFragment_to_loginFragment)
+        }
         return binding.root
     }
 }

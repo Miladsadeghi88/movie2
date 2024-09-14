@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.moviebox.R
 import com.example.moviebox.databinding.FragmentIntroBinding
 
 class IntroFragment:Fragment() {
@@ -15,6 +17,9 @@ class IntroFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding=FragmentIntroBinding.inflate(inflater, container,false)
+        binding.btnGetIn.setOnClickListener {
+            findNavController().navigate(R.id.action_introFragment_to_loginFragment)
+        }
         return binding.root
     }
 }
