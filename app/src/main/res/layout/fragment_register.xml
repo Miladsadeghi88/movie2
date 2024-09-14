@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_background"
                     android:maxLength="21"
-                    android:lines="1"
+                    android:inputType="text"
                     android:paddingStart="40dp"
                     tools:ignore="RtlSymmetry"
                     android:textColor="@color/white"
@@ -92,7 +92,6 @@
                     android:layout_height="50dp"
                     android:background="@drawable/btn_background"
                     android:inputType="textEmailAddress"
-                    android:lines="1"
                     android:paddingStart="40dp"
                     tools:ignore="RtlSymmetry"
                     android:textColor="@color/white"
@@ -131,7 +130,6 @@
                     android:inputType="number"
                     android:paddingStart="40dp"
                     android:maxLength="11"
-                    android:lines="1"
                     tools:ignore="RtlSymmetry"
                     android:textColor="@color/white"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -168,7 +166,6 @@
                     android:maxLength="21"
                     android:paddingStart="40dp"
                     tools:ignore="RtlSymmetry"
-                    android:lines="1"
                     android:textColor="@color/white"
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -206,7 +203,6 @@
                     android:inputType="textPassword"
                     android:background="@drawable/btn_background"
                     android:maxLength="21"
-                    android:lines="1"
                     android:paddingStart="40dp"
                     tools:ignore="RtlSymmetry"
                     android:textColor="@color/white"/>
@@ -225,9 +221,6 @@
                 android:text="@string/submit"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
-
-
-
         </LinearLayout>
 
     </ScrollView>

@@ -47,6 +47,8 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_background"
                     android:gravity="center"
+                    android:inputType="text"
+                    android:textColor="@color/white"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
