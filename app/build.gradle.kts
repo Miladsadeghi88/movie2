@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
@@ -58,6 +59,9 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation(libs.material)
+    implementation("com.google.dagger:hilt-android:2.50")
+    implementation("androidx.activity:activity:1.9.1")
+    kapt("com.google.dagger:hilt-compiler:2.50")
 
 
 }
