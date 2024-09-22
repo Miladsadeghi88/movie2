@@ -16,7 +16,6 @@
 
 
 
-
         <activity
             android:name=".ui.account.AccountActivity"
             android:exported="true" >

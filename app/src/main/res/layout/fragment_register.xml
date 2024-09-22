@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="25dp"
-                android:hint="@string/User_Name"
+                android:hint="@string/username"
                 android:textColorHint="@color/white"
                 app:boxBackgroundMode="none"
                 app:counterEnabled="true"
@@ -55,17 +55,16 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/userName_component"
+                    android:id="@+id/username_edt"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:background="@drawable/btn_background"
-                    android:maxLength="21"
                     android:inputType="text"
+                    android:maxLength="21"
                     android:paddingStart="40dp"
-                    tools:ignore="RtlSymmetry"
+                    android:paddingBottom="15dp"
                     android:textColor="@color/white"
-                    android:gravity="top"
-                    />
+                    tools:ignore="RtlSymmetry" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -95,6 +94,7 @@
                     android:paddingStart="40dp"
                     tools:ignore="RtlSymmetry"
                     android:textColor="@color/white"
+                    android:paddingBottom="20dp"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,15 +123,16 @@
                 app:prefixTextColor="@color/white"
                 >
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phone_EditText"
+                    android:id="@+id/phone_edt"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:background="@drawable/btn_background"
                     android:inputType="number"
                     android:paddingStart="40dp"
                     android:maxLength="11"
                     tools:ignore="RtlSymmetry"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:paddingBottom="15dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -160,13 +161,14 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50sp"
                     android:background="@drawable/btn_background"
                     android:inputType="textPassword"
                     android:maxLength="21"
                     android:paddingStart="40dp"
                     tools:ignore="RtlSymmetry"
                     android:textColor="@color/white"
+                    android:paddingBottom="15dp"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -199,13 +201,14 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/repeatPassword_EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50sp"
                     android:inputType="textPassword"
                     android:background="@drawable/btn_background"
                     android:maxLength="21"
                     android:paddingStart="40dp"
                     tools:ignore="RtlSymmetry"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:paddingBottom="15dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 

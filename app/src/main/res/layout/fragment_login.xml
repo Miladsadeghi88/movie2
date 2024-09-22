@@ -5,17 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity"
-    android:background="@color/main_background">
+    android:background="@color/main_background"
+    tools:context=".ui.account.AccountActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/gradient_color_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/gradient_color_background">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,97 +33,101 @@
                 android:textSize="50sp"
                 android:textStyle="bold" />
 
-         <com.google.android.material.textfield.TextInputLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="50sp"
-             android:layout_marginHorizontal="31dp"
-             app:boxBackgroundMode="none"
-             android:hint="@string/user_name"
-             app:hintTextColor="@color/white"
-             android:textColorHint="@color/white"
-             app:startIconDrawable="@drawable/ic_person_24"
-             app:startIconTint="@color/white"
-             app:endIconMode="clear_text"
-             app:endIconTint="@color/white"
-             app:errorEnabled="true"
-             app:errorTextColor="@color/white"
-             >
-             <com.google.android.material.textfield.TextInputEditText
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:paddingStart="40dp"
-                 android:background="@drawable/btn_background"
-                 tools:ignore="RtlSymmetry"
-                 android:inputType="text"
-                 android:textColor="@color/white"/>
-         </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="31dp"
+                android:layout_marginTop="50sp"
+                android:hint="@string/user_name"
+                android:textColorHint="@color/white"
+                app:boxBackgroundMode="none"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white"
+                app:errorEnabled="true"
+                app:errorTextColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconDrawable="@drawable/ic_person_24"
+                app:startIconTint="@color/white">
 
-      <com.google.android.material.textfield.TextInputLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="@string/password"
-          app:hintTextColor="@color/white"
-          android:textColorHint="@color/white"
-          app:boxBackgroundMode="none"
-          app:startIconDrawable="@drawable/ic_lock_24"
-          app:startIconTint="@color/white"
-          app:endIconTint="@color/white"
-          app:endIconMode="password_toggle"
-          android:layout_marginTop="10sp"
-          android:layout_marginHorizontal="31dp"
-          app:errorTextColor="@color/white"
-          app:errorEnabled="true">
-          <com.google.android.material.textfield.TextInputEditText
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="@drawable/btn_background"
-              android:paddingStart="40dp"
-             android:inputType="textPassword"
-              tools:ignore="RtlSymmetry"
-              android:textColor="@color/white"/>
-      </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_background"
+                    android:inputType="text"
+                    android:paddingStart="40dp"
+                    android:textColor="@color/white"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="31dp"
+                android:layout_marginTop="10sp"
+                android:hint="@string/password"
+                android:textColorHint="@color/white"
+                app:boxBackgroundMode="none"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/white"
+                app:errorEnabled="true"
+                app:errorTextColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconDrawable="@drawable/ic_lock_24"
+                app:startIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password_EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_background"
+                    android:inputType="textPassword"
+                    android:paddingStart="40dp"
+                    android:textColor="@color/white"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
                 android:id="@+id/txt_forgot_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_your_password"
-                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="16sp"/>
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login"
+                style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                style="@android:style/Widget.Button"
-                android:background="@drawable/btn_background"
-                android:layout_marginTop="64dp"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="64dp"
                 android:layout_marginEnd="32dp"
+                android:background="@drawable/btn_background"
                 android:text="@string/log_in"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/txt_DoNotHaveAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
                 android:text="@string/don_t_have_an_account"
-                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="16sp"
-                android:layout_marginTop="32dp"/>
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/txt_RegisterNow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/register_now"
-                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="16sp"/>
-
-
-
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
 
         </LinearLayout>

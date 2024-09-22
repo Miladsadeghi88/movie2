@@ -43,4 +43,5 @@
     <string name="enter_the_recovery_code">Enter the recovery code</string>
     <string name="new_password">New password</string>
     <string name="save">Save</string>
+    <string name="username">Username</string>
 </resources>
