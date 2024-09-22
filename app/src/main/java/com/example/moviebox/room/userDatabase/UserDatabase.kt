@@ -14,21 +14,22 @@ abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
 
     companion object {
-
+        // Using object for singleton
         @Volatile
         private var INSTANCE: UserDatabase? = null
 
         fun getDatabase(context: Context): UserDatabase {
             return INSTANCE ?: synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    UserDatabase::class.java,
-                    "user_database"
-                ).build()
-                INSTANCE = instance
-                instance
-
+                INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
             }
+        }
+
+        private fun buildDatabase(context: Context): UserDatabase {
+            return Room.databaseBuilder(
+                context.applicationContext,
+                UserDatabase::class.java,
+                "user_database"
+            ).build()
         }
     }
 }

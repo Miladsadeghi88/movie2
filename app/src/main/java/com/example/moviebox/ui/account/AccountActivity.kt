@@ -4,7 +4,9 @@ import android.accounts.Account
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.moviebox.databinding.ActivityAccountBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AccountActivity : AppCompatActivity() {
     private lateinit var binding:ActivityAccountBinding
 

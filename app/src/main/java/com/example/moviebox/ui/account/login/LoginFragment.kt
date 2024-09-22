@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -46,6 +47,7 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
         }
         binding.btnLogin.setOnClickListener {
+            binding.layLoading.isVisible = true
             val username = binding.usernameEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
             viewModel.login(username, password)
@@ -53,6 +55,7 @@ class LoginFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.loginState.collect { state ->
+                    binding.layLoading.isVisible = false
                     when (state) {
                         is LoginViewModel.LoginState.Loading -> {
                             // Show loading indicator (e.g., ProgressBar)
@@ -74,4 +77,6 @@ class LoginFragment : Fragment() {
         }
 
     }
+
+
 }

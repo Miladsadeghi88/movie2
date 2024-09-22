@@ -1,5 +1,5 @@
 package com.example.moviebox.ui.account.register
-import com.google.android.material.snackbar.Snackbar
+
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -7,10 +7,6 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.launch
-import androidx.compose.ui.semantics.error
-import androidx.compose.ui.semantics.text
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -19,13 +15,17 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.moviebox.databinding.FragmentRegisterBinding
 import com.example.moviebox.room.entityUser.EntityUserTable
 import com.example.moviebox.ui.main.MainActivity
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlin.text.toLongOrNull
 
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
+    private var jobUserName: Job? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,13 +37,20 @@ class RegisterFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+
         super.onViewCreated(view, savedInstanceState)
 
         val viewModel: RegisterViewModel by viewModels()
 
         binding.usernameEdt.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                viewModel.checkUsername(s.toString())
+                jobUserName?.cancel()
+                jobUserName = viewLifecycleOwner.lifecycleScope.launch {
+                    delay(500)
+                    viewModel.checkUsername(s.toString())
+                }
+
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -66,11 +73,10 @@ class RegisterFragment : Fragment() {
 
         binding.btnSubmit.setOnClickListener {
             val user = EntityUserTable(
-                0, // You might need to adjust this based on your EntityUserTable structure
-                binding.usernameEditText.text.toString(),
-                binding.emailEditText.text.toString(),
-                binding.phoneNumberEditText.text.toString().toLongOrNull() ?: 0L,
-                binding.passwordEditText.text.toString()
+                username = binding.usernameEdt.text.toString(),
+                email = binding.emailEditText.text.toString(),
+                phoneNumber = binding.phoneEdt.text.toString().toLongOrNull() ?: 0L,
+                password = binding.passwordEditText.text.toString()
             )
             viewModel.registerUser(user)
         }
@@ -83,21 +89,27 @@ class RegisterFragment : Fragment() {
                             startActivity(Intent(requireContext(), MainActivity::class.java))
                             requireActivity().finish()
                         }
+
                         RegisterViewModel.RegistrationStatus.Failure -> {
-                            Snackbar.make(binding.root, "Registration failed. Please check your input.", Snackbar.LENGTH_SHORT).show()
+                            Snackbar.make(
+                                binding.root,
+                                "Registration failed. Please check your input.",
+                                Snackbar.LENGTH_SHORT
+                            ).show()
                         }
+
                         RegisterViewModel.RegistrationStatus.InProgress -> {
                             // You can show a progress indicator here if needed
                         }
                     }
                 }
                 viewModel.usernameError.collect { error ->
-                    binding.usernameTextInputLayout.error = error
+                    binding.usrNameComponent.error = error
                 }
                 // ... similar collectors for other error StateFlows (or use a sealed class for errors)
             }
 
 
-
-
+        }
+    }
 }

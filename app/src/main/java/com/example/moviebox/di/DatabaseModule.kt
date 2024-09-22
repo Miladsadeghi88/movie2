@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.moviebox.room.userDao.UserDao
 import com.example.moviebox.room.userDatabase.UserDatabase
+import com.example.moviebox.ui.account.userRepository.UserRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +17,7 @@ import javax.inject.Singleton
 object DatabaseModule {
     @Singleton
     @Provides
-    fun provideDatabase (@ApplicationContext appContext : Context) : UserDatabase {
+    fun provideDatabase(@ApplicationContext appContext: Context): UserDatabase {
         return Room.databaseBuilder(
             appContext,
             UserDatabase::class.java,
@@ -24,8 +25,14 @@ object DatabaseModule {
         ).build()
     }
 
+    @Singleton
+    @Provides
+    fun provideUserDao(userDatabase: UserDatabase): UserDao {
+        return userDatabase.userDao()  // Provide UserDao instance from UserDatabase
+    }
+
 }
 
-fun provideUserDao(database: UserDatabase): UserDao {
-return database.userDao()
-}
+
+
+

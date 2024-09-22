@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "user_table",
     indices = [Index(value = ["Email"], unique = true), Index(
-        value = ["Mobile_Number"],
+        value = ["phone_number"],
         unique = true
     )]
 )
@@ -16,7 +16,6 @@ data class EntityUserTable(
     @PrimaryKey
     @ColumnInfo(name = "username")
     val username: String, // Username must be unique by default
-
     @ColumnInfo(name = "password")
     val password: String,
     @ColumnInfo(name = "Email")

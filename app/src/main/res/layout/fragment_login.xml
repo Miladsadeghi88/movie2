@@ -34,6 +34,7 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username_component"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="31dp"
@@ -47,7 +48,10 @@
                 app:errorTextColor="@color/white"
                 app:hintTextColor="@color/white"
                 app:startIconDrawable="@drawable/ic_person_24"
-                app:startIconTint="@color/white">
+                app:startIconTint="@color/white"
+                app:helperText="Required*"
+                app:helperTextTextColor="@color/red"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username_EditText"
@@ -74,7 +78,9 @@
                 app:errorTextColor="@color/white"
                 app:hintTextColor="@color/white"
                 app:startIconDrawable="@drawable/ic_lock_24"
-                app:startIconTint="@color/white">
+                app:startIconTint="@color/white"
+                app:helperText="Required*"
+                app:helperTextTextColor="@color/red">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password_EditText"
@@ -132,4 +138,22 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/lay_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:background="#720B0B0B"
+        android:clickable="false"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
